@@ -1078,6 +1078,86 @@ e       .stopPropagation();
 
         var mator = parseInt($('#engine-volume').val());
         if($('input[name=auction]:checked').val() == 'copart'){
+        if(price< 50)
+            $('#auction_fee').val(25)
+        else if(price< 100)
+            $('#auction_fee').val(45)
+        else if(price< 200)
+            $('#auction_fee').val(90)
+        else if(price< 300)
+            $('#auction_fee').val(120)
+        else if(price< 500)
+            $('#auction_fee').val(160)
+        else if(price< 600)
+            $('#auction_fee').val(185)
+        else if(price< 700)
+            $('#auction_fee').val(210)
+        else if(price< 800)
+            $('#auction_fee').val(230)
+        else if(price< 900)
+            $('#auction_fee').val(250)
+        else if(price< 1000)
+            $('#auction_fee').val(275)
+        else if(price< 1200)
+            $('#auction_fee').val(325)
+        else if(price< 1300)
+            $('#auction_fee').val(350)
+        else if(price< 1400)
+            $('#auction_fee').val(365)
+        else if(price< 1500)
+            $('#auction_fee').val(380)
+        else if(price< 1600)
+            $('#auction_fee').val(390)
+        else if(price< 1700)
+            $('#auction_fee').val(410)
+        else if(price< 1800)
+            $('#auction_fee').val(420)
+        else if(price< 2000)
+            $('#auction_fee').val(440)
+        else if(price< 2400)
+            $('#auction_fee').val(470)
+        else if(price< 2500)
+            $('#auction_fee').val(480)
+        else if(price< 3000)
+            $('#auction_fee').val(500)
+        else if(price< 3500)
+            $('#auction_fee').val(600)
+        else if(price< 4000)
+            $('#auction_fee').val(650)
+        else if(price< 4500)
+            $('#auction_fee').val(675)
+        else if(price< 5000)
+            $('#auction_fee').val(700)
+
+    }
+        $('#transfer').val($('#auction_location').val());
+        var full_price = (price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val()))*1.07;
+        var maxaturq = 0;
+        var maxaturq_minchev_3 = full_price*0.15;
+        var maxaturq_minchev_5 = full_price*0.2;
+        var maxaturq_mator = mator*0.44*1.07;
+
+        maxaturq = maxaturq_minchev_3;
+        if($('#year').val() >= 2015 && $('#year').val() < 2017) {
+            maxaturq = maxaturq_minchev_5;
+            if (maxaturq_minchev_5 < maxaturq_mator)
+                maxaturq = maxaturq_mator;
+        }
+            if($('#year').val() >= 2013 && $('#year').val() < 2015){
+            maxaturq = maxaturq_minchev_5;
+            if(maxaturq_minchev_5<maxaturq_mator)
+                maxaturq = maxaturq_mator;
+
+        }
+$('#customs_clearance').val(maxaturq/1.07+(maxaturq/1.07+price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val()))*0.2);
+        var total = parseInt($('#customs_clearance').val())+price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val());
+        $('#price2').val(parseInt(total*0.05));
+        $('#total_price2').val(parseInt(total*1.05));
+    })
+
+    $('#search-price').on('keyup',function () {
+        var price = $(this).val();
+        if($('input[name=auction]:checked').val() == 'copart'){
             if(price< 50)
                 $('#auction_fee').val(25)
             else if(price< 100)
@@ -1130,28 +1210,5 @@ e       .stopPropagation();
                 $('#auction_fee').val(700)
 
         }
-        $('#transfer').val($('#auction_location').val());
-        var full_price = (price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val()))*1.07;
-        var maxaturq = 0;
-        var maxaturq_minchev_3 = full_price*0.15;
-        var maxaturq_minchev_5 = full_price*0.2;
-        var maxaturq_mator = mator*0.44*1.07;
-
-        maxaturq = maxaturq_minchev_3;
-        if($('#year').val() >= 2015 && $('#year').val() < 2017) {
-            maxaturq = maxaturq_minchev_5;
-            if (maxaturq_minchev_5 < maxaturq_mator)
-                maxaturq = maxaturq_mator;
-        }
-            if($('#year').val() >= 2013 && $('#year').val() < 2015){
-            maxaturq = maxaturq_minchev_5;
-            if(maxaturq_minchev_5<maxaturq_mator)
-                maxaturq = maxaturq_mator;
-
-        }
-$('#customs_clearance').val(maxaturq/1.07+(maxaturq/1.07+price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val()))*0.2);
-        var total = parseInt($('#customs_clearance').val())+price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val());
-        $('#price2').val(parseInt(total*0.05));
-        $('#total_price2').val(parseInt(total*1.05));
     })
 </script>
