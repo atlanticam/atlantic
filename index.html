@@ -1135,21 +1135,22 @@ e       .stopPropagation();
         var maxaturq = 0;
         var maxaturq_minchev_3 = full_price*0.15;
         var maxaturq_minchev_5 = full_price*0.2;
-        var maxaturq_mator = mator*0.44*1.07;
+        var maxaturq_mator = (mator*0.44)*1.07;
 
         maxaturq = maxaturq_minchev_3;
         if($('#year').val() >= 2015 && $('#year').val() < 2017) {
+
             maxaturq = maxaturq_minchev_5;
             if (maxaturq_minchev_5 < maxaturq_mator)
                 maxaturq = maxaturq_mator;
-        }
-            if($('#year').val() >= 2013 && $('#year').val() < 2015){
+
+        }else if($('#year').val() >= 2013 && $('#year').val() < 2015){
             maxaturq = maxaturq_minchev_5;
             if(maxaturq_minchev_5<maxaturq_mator)
                 maxaturq = maxaturq_mator;
 
         }
-$('#customs_clearance').val(maxaturq/1.07+(maxaturq/1.07+price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val()))*0.2);
+$('#customs_clearance').val(parseInt(maxaturq+(maxaturq+price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val()))*0.2));
         var total = parseInt($('#customs_clearance').val())+price+parseInt($('#auction_location').val())+parseInt($('#auction_fee').val());
         $('#price2').val(parseInt(total*0.05));
         $('#total_price2').val(parseInt(total*1.05));
