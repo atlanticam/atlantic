@@ -977,6 +977,110 @@
 </html>
 
 <script>
+function copartfee(H4){
+var B4= 50;
+var B5= 100;
+var B6= 200;
+var B7= 300;
+var B8= 350;
+var B9= 400;
+var B10= 450;
+var B11= 500;
+var B12= 550;
+var B13= 600;
+var B14= 700;
+var B15= 800;
+var B16= 900;
+var B17= 1000;
+var B18= 1200;
+var B19= 1300;
+var B20= 1400;
+var B21= 1500;
+var B22= 1600;
+var B23= 1700;
+var B24= 1800;
+var B25= 2000;
+var B26= 2400;
+var B27= 2500;
+var B28= 3000;
+var B29= 3500;
+var B30= 4000;
+var B31= 4500;
+var B32= 5000;
+var B33= 6000;
+var B34= 7500;
+var B35= 10000;
+var B36= 15000;
+var B37= 20000;
+var B38= 25000;
+var B39= 30000;
+var B40= 35000;
+var B41= 10000000;
+var C4= 1;
+var C5= 1;
+var C6= 25;
+var C7= 50;
+var C8= 74;
+var C9= 75;
+var C10= 109;
+var C11= 110;
+var C12= 125;
+var C13= 129;
+var C14= 140;
+var C15= 155;
+var C15= 169;
+var C16= 185;
+var C17= 200;
+var C18= 225;
+var C19= 239;
+var C20= 250;
+var C21= 259;
+var C22= 275;
+var C23= 285;
+var C24= 300;
+var C25= 325;
+var C26= 335;
+var C27= 350;
+var C28= 400;
+var C29= 450;
+var C30= 475;
+var C31= 500;
+var C32= 525;
+var C33= 550;
+var C34= 575;
+var C35= 600;
+var C36= 0.04;
+var C37= 0.04;
+var C38= 0.04;
+var C39= 0.04;
+var C40= 0.04;
+
+
+var B51 = 100;
+var B52 = 500;
+var B53 = 1000;
+var B54 = 1500;
+var B55 = 2000;
+var B56 = 4000;
+var B57 = 6000;
+var B58 = 8000;
+var B59 = 10000000;
+var C51 = 0;
+var C52 = 39;
+var C53 = 49;
+var C54 = 69;
+var C55 = 79;
+var C56 = 89;
+var C57 = 99;
+var C58 = 119;
+var C59 = 129;
+ var final =  H4<=B4?C4:(H4<=B5?C5:(H4<=B6?C6:(H4<=B7?C7:(H4<=B8?C8:(H4<=B9?C9:(H4<=B10?C10:(H4<=B11?C11:(H4<=B12?C12:(H4<=B13?C13:(H4<=B14?C14:(H4<=B15?C15:(H4<=B16?C16:(H4<=B17?C17:(H4<=B18?C18:(H4<=B19?C19:(H4<=B20?C20:(H4<=B21?C21:(H4<=B22?C22:(H4<=B23?C23:(H4<=B24?C24:(H4<=B25?C25:(H4<=B26?C26:(H4<=B27?C27:(H4<=B28?C28:(H4<=B29?C29:(H4<=B30?C30:(H4<=B31?C31:(H4<=B32?C32:(H4<=B33?C33:(H4<=B34?C34:(H4<=B35?C35:(H4<=B36?C36:(H4<=B37?H4*1.04:(H4<=B38?H4*1.04:(H4<=B39?H4*1.04:(H4<=B40?H4*1.04:(H4<=B41?H4*1.04:0)))))))))))))))))))))))))))))))))))));
+
+var other_fee = (H4<=B51?C51:(H4<=B52?C52:(H4<=B53?C53:(H4<=B54?C54:(H4<=B55?C55:(H4<=B56?C56:(H4<=B57?C57:(H4<=B58?C58:(H4<=B59?C59:0)))))))))
+
+ return other_fee+final+59;
+}
+
     $(document).ready(function() {
         $('#auction_location').select2().on('change', function (e) {
             $('#transfer').val($('#auction_location').val());
@@ -996,56 +1100,8 @@ e       .stopPropagation();
 
         var mator = parseInt($('#engine-volume').val());
         if($('input[name=auction]:checked').val() == 'copart'){
-        if(price< 50)
-            $('#auction_fee').val(25)
-        else if(price< 100)
-            $('#auction_fee').val(45)
-        else if(price< 200)
-            $('#auction_fee').val(90)
-        else if(price< 300)
-            $('#auction_fee').val(120)
-        else if(price< 500)
-            $('#auction_fee').val(160)
-        else if(price< 600)
-            $('#auction_fee').val(185)
-        else if(price< 700)
-            $('#auction_fee').val(210)
-        else if(price< 800)
-            $('#auction_fee').val(230)
-        else if(price< 900)
-            $('#auction_fee').val(250)
-        else if(price< 1000)
-            $('#auction_fee').val(275)
-        else if(price< 1200)
-            $('#auction_fee').val(325)
-        else if(price< 1300)
-            $('#auction_fee').val(350)
-        else if(price< 1400)
-            $('#auction_fee').val(365)
-        else if(price< 1500)
-            $('#auction_fee').val(380)
-        else if(price< 1600)
-            $('#auction_fee').val(390)
-        else if(price< 1700)
-            $('#auction_fee').val(410)
-        else if(price< 1800)
-            $('#auction_fee').val(420)
-        else if(price< 2000)
-            $('#auction_fee').val(440)
-        else if(price< 2400)
-            $('#auction_fee').val(470)
-        else if(price< 2500)
-            $('#auction_fee').val(480)
-        else if(price< 3000)
-            $('#auction_fee').val(500)
-        else if(price< 3500)
-            $('#auction_fee').val(600)
-        else if(price< 4000)
-            $('#auction_fee').val(650)
-        else if(price< 4500)
-            $('#auction_fee').val(675)
-        else if(price< 5000)
-            $('#auction_fee').val(700)
+        
+            $('#auction_fee').val(copartfee(price))
 
     }
         $('#transfer').val($('#auction_location').val());
@@ -1077,56 +1133,7 @@ $('#customs_clearance').val(parseInt(maxaturq+(maxaturq+price+parseInt($('#aucti
     $('#search-price').on('keyup',function () {
         var price = $(this).val();
         if($('input[name=auction]:checked').val() == 'copart'){
-            if(price< 50)
-                $('#auction_fee').val(25)
-            else if(price< 100)
-                $('#auction_fee').val(45)
-            else if(price< 200)
-                $('#auction_fee').val(90)
-            else if(price< 300)
-                $('#auction_fee').val(120)
-            else if(price< 500)
-                $('#auction_fee').val(160)
-            else if(price< 600)
-                $('#auction_fee').val(185)
-            else if(price< 700)
-                $('#auction_fee').val(210)
-            else if(price< 800)
-                $('#auction_fee').val(230)
-            else if(price< 900)
-                $('#auction_fee').val(250)
-            else if(price< 1000)
-                $('#auction_fee').val(275)
-            else if(price< 1200)
-                $('#auction_fee').val(325)
-            else if(price< 1300)
-                $('#auction_fee').val(350)
-            else if(price< 1400)
-                $('#auction_fee').val(365)
-            else if(price< 1500)
-                $('#auction_fee').val(380)
-            else if(price< 1600)
-                $('#auction_fee').val(390)
-            else if(price< 1700)
-                $('#auction_fee').val(410)
-            else if(price< 1800)
-                $('#auction_fee').val(420)
-            else if(price< 2000)
-                $('#auction_fee').val(440)
-            else if(price< 2400)
-                $('#auction_fee').val(470)
-            else if(price< 2500)
-                $('#auction_fee').val(480)
-            else if(price< 3000)
-                $('#auction_fee').val(500)
-            else if(price< 3500)
-                $('#auction_fee').val(600)
-            else if(price< 4000)
-                $('#auction_fee').val(650)
-            else if(price< 4500)
-                $('#auction_fee').val(675)
-            else if(price< 5000)
-                $('#auction_fee').val(700)
+          $('#auction_fee').val(copartfee(price))
 
         }
     })
