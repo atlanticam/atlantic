@@ -1,10 +1,15 @@
+var rate = 1.1104;
+
 function getNum(val) {
     if (isNaN(val)) {
         return 0;
     }
-    return val;
+    return parseInt(val);
 }
 
+    $.getJSON('https://api.exchangeratesapi.io/latest',function( data ) {
+      rate = data.rates.USD;
+    });
 function copartfee(H4){
     var B4= 50;
     var B5= 100;
@@ -107,7 +112,7 @@ function copartfee(H4){
 
     return other_fee+final+59;
 }
-function iaaifee() {
+function iaaifee(H3) {
     return 6000;
 }
 
@@ -183,10 +188,10 @@ function rastamojka(gin = 0 ,fob =0 ,perevozka = 0,taretiv =2019,mator = 0) {
     var G20 =G15+G16+G17;
 
     return {
-        total:getNum(Math.round(G20)),
-        bnapahpanutyun:getNum(Math.round(G17)),
-        aah:getNum(Math.round(G16)),
-        maksavchar:getNum(Math.round(G15))
+        total:getNum(Math.round(G20)*rate),
+        bnapahpanutyun:getNum(Math.round(G17)*rate),
+        aah:getNum(Math.round(G16)*rate),
+        maksavchar:getNum(Math.round(G15)*rate)
     }
 
 }
@@ -216,12 +221,15 @@ var calculate = function(){
 
     $("#fee").text(fees);
     if( getNum(mator) && getNum(year)){
-        var full_info = rastamojka(gin,fees,transfer,year,mator);
+        var full_info = rastamojka(gin/rate,fees/rate,transfer/rate,year,mator);
+
+        var mijnordavchar = getNum((full_info.total+gin+fees)*0.065);
         $('#maksaturq').text(full_info.maksavchar);
         $('#aah').text(full_info.aah);
         $('#bnapahpanutyun').text(full_info.bnapahpanutyun);
         $('#total_maksaturq').text(full_info.total);
-        $('#total').text(full_info.total+gin+fees);
+        $('#total').text(full_info.total+gin+fees+mijnordavchar);
+        $('#mijnordavchar').text(mijnordavchar);
     }
     $('#texapoxum').text(transfer);
 
