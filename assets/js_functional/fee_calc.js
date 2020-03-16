@@ -113,7 +113,101 @@ function copartfee(H4){
     return other_fee+final+59;
 }
 function iaaifee(H3) {
-    return 6000;
+    var B4 = 49.99;
+    var B5 = 99.99;
+    var B6 = 199.99;
+    var B7 = 299.99;
+    var B8 = 349.99;
+    var B9 = 399.99;
+    var B10 = 499.99;
+    var B11 = 599.99;
+    var B12 = 699.99;
+    var B13 = 799.99;
+    var B14 = 899.99;
+    var B15 = 999.99;
+    var B16 = 1099.99;
+    var B17 = 1199.99;
+    var B18 = 1299.99;
+    var B19 = 1399.99;
+    var B20 = 1499.99;
+    var B21 = 1599.99;
+    var B22 = 1799.99;
+    var B23 = 1999.99;
+    var B24 = 2199.99;
+    var B25 = 2399.99;
+    var B26 = 2499.99;
+    var B27 = 2999.99;
+    var B28 = 3499.99;
+    var B29 = 3999.99;
+    var B30 = 4499.99;
+    var B31 = 4999.99;
+    var B32 = 5999.99;
+    var B33 = 7499.99;
+    var B34 = 19999.99;
+    var B35 = 999999.99;
+    var C4 = 1;
+    var C5 = 1;
+    var C6 = 40;
+    var C7 = 60;
+    var C8 = 75;
+    var C9 = 90;
+    var C10 = 100;
+    var C11 = 130;
+    var C12 = 145;
+    var C13 = 160;
+    var C14 = 175;
+    var C15 = 190;
+    var C16 = 205;
+    var C17 = 220;
+    var C18 = 230;
+    var C19 = 240;
+    var C20 = 255;
+    var C21 = 270;
+    var C22 = 290;
+    var C23 = 310;
+    var C24 = 325;
+    var C25 = 330;
+    var C26 = 345;
+    var C27 = 360;
+    var C28 = 400;
+    var C29 = 450;
+    var C30 = 475;
+    var C31 = 500;
+    var C32 = 525;
+    var C33 = 550;
+    var C34 = 580;
+    var C35 = 320;
+
+
+    var B50 = 99.99;
+    var B51 = 499.99;
+    var B52 = 999.99;
+    var B53 = 1499.99;
+    var B54 = 1999.99;
+    var B55 = 3999.99;
+    var B56 = 5999.99;
+    var B57 = 7999.99;
+    var B58 = 999999.99;
+
+    var C50 = 0;
+    var C51 = 29;
+    var C52 = 39;
+    var C53 = 59;
+    var C54 = 69;
+    var C55 = 79;
+    var C56 = 89;
+    var C57 = 99;
+    var C58 = 119;
+
+
+    var C61 = 59;
+    var C62 = 7;
+
+    var fee = (H3<=B4?C4:(H3<=B5?C5:(H3<=B6?C6:(H3<=B7?C7:(H3<=B8?C8:(H3<=B9?C9:(H3<=B10?C10:(H3<=B11?C11:(H3<=B12?C12:(H3<=B13?C13:(H3<=B14?C14:(H3<=B15?C15:(H3<=B16?C16:(H3<=B17?C17:(H3<=B18?C18:(H3<=B19?C19:(H3<=B20?C20:(H3<=B21?C21:(H3<=B22?C22:(H3<=B23?C23:(H3<=B24?C24:(H3<=B25?C25:(H3<=B26?C26:(H3<=B27?C27:(H3<=B28?C28:(H3<=B29?C29:(H3<=B30?C30:(H3<=B31?C31:(H3<=B32?C32:(H3<=B33?C33:(H3<=B34?C34:(H3<=B35?C35:0))))))))))))))))))))))))))))))));
+    var inet_fee = (H3<=B50?C50:(H3<=B51?C51:(H3<=B52?C52:(H3<=B53?C53:(H3<=B54?C54:(H3<=B55?C55:(H3<=B56?C56:(H3<=B57?C57:(H3<=B58?C58:0)))))))));
+
+
+    return fee+inet_fee+C61+C62;
 }
 
 function rastamojka(gin = 0 ,fob =0 ,perevozka = 0,taretiv =2019,mator = 0) {
