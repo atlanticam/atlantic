@@ -1,3 +1,5 @@
+$('#auction_location').select2()
+
 var rate = 1.1104;
 
 function getNum(val) {
