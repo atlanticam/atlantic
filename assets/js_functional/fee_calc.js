@@ -324,7 +324,7 @@ var calculate = function(){
         $('#aah').text(full_info.aah);
         $('#bnapahpanutyun').text(full_info.bnapahpanutyun);
         $('#total_maksaturq').text(full_info.total);
-        $('#total').text(full_info.total+gin+fees+mijnordavchar);
+        $('#total').text(full_info.total+gin+fees+mijnordavchar+transfer);
         $('#mijnordavchar').text(mijnordavchar);
     }
     $('#texapoxum').text(transfer);
