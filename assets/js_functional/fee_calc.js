@@ -319,7 +319,7 @@ var calculate = function(){
     if( getNum(mator) && getNum(year)){
         var full_info = rastamojka(gin/rate,fees/rate,transfer/rate,year,mator);
 
-        var mijnordavchar = getNum((full_info.total+gin+fees)*0.075);
+        var mijnordavchar = getNum((full_info.total+gin+fees+transfer)*0.075);
         $('#maksaturq').text(full_info.maksavchar);
         $('#aah').text(full_info.aah);
         $('#bnapahpanutyun').text(full_info.bnapahpanutyun);
