@@ -312,7 +312,7 @@ var calculate = function(){
     if($('#auction_type').val() == 'iaai')
          fees = iaaifee(gin);
 
-    var transfer = parseInt($('#auction_location').val());
+    var transfer = parseInt($('#auction_location').val())+ 100;
 
 
     $("#fee").text(fees);
