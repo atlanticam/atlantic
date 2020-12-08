@@ -312,7 +312,7 @@ var calculate = function(){
     if($('#auction_type').val() == 'iaai')
          fees = iaaifee(gin);
 
-    var transfer = parseInt($('#auction_location').val());
+    var transfer = parseInt($('#auction_location').val()) + 100;
 
 
     $("#fee").text(fees);
@@ -327,7 +327,7 @@ var calculate = function(){
         $('#total').text(full_info.total+gin+fees+mijnordavchar+transfer);
         $('#mijnordavchar').text(mijnordavchar);
     }
-    $('#texapoxum').text(transfer+100);
+    $('#texapoxum').text(transfer);
 
 
 };
